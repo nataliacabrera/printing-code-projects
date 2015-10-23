@@ -1,19 +1,16 @@
-console.log("we are here");
 var r = new Rune({
   container: "#canvas",
   width: 800,
-  height: 800,
-  debug: true
+  height: 500
 });
 
 // Create a new Rune.Font object
-var f = new Rune.Font("Roboto");
-console.log("font is found");
+var f = new Rune.Font("Roboto-Regular.ttf");
 
 // load() will actually load the font file and call the function
 // when the loading is done.
-f.load(function() {
-console.log("font is loaded");
+f.load(function(err) {
+
   // Get a path of the text "Rune" from the font
   // a x,y 200,200 and font size 120.
   var path = f.toPath("Rune", 150, 200, 200)
@@ -40,7 +37,6 @@ console.log("font is loaded");
     }
 
   }
-  r.draw();
 
+  r.draw();
 });
- 
